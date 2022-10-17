@@ -42,7 +42,7 @@ def preprocessing(sentences):
 def st_ui():
   st.set_page_config(layout = "wide")
   st.title("WordCloud of supplier contract")
-  Button=st.sidebar.button('Generate wordcloud')
+#   Button=st.sidebar.button('Generate wordcloud')
   text="""Word Clouds came out to be a game-changer visualization technique for understanding and determining patterns and evolving trends. 
           Whether to discover the political agendas of aspiring election candidates of a country or to analyze the customer reviews on the recently 
           launched product, one can get a visual representation by plotting the Word Cloud Word Cloud or Tag Clouds is a visualization technique for 
@@ -61,14 +61,13 @@ def st_ui():
           Clouds are being popularly used in today’s world."""
   sentences = nltk.sent_tokenize(text)
   documents_clean=preprocessing(sentences)  
-  if button:
-    wordcloud = WordCloud(width = 800, height =600,background_color ='white',min_font_size = 5,max_words=500).generate(documents_clean)
-    # plot the WordCloud image                      
-    plt.figure(figsize = (15,10), facecolor = None)
-    plt.imshow(wordcloud,interpolation="bilinear")
-    plt.axis("off")
-    plt.tight_layout(pad = 0)
-    plt.show()
+  wordcloud = WordCloud(width = 800, height =600,background_color ='white',min_font_size = 5,max_words=500).generate(documents_clean)
+  # plot the WordCloud image                      
+  plt.figure(figsize = (15,10), facecolor = None)
+  plt.imshow(wordcloud,interpolation="bilinear")
+  plt.axis("off")
+  plt.tight_layout(pad = 0)
+  plt.show()
     
     
  
