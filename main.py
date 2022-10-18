@@ -1,7 +1,7 @@
 # import re
 # import string
 # import nltk
-import streamlit as st
+# import streamlit as st
 # nltk.download('all')
 # from nltk import sent_tokenize,word_tokenize
 # from nltk.corpus import stopwords  #stopwords
@@ -73,4 +73,4 @@ def st_ui(text):
  
 
 # if __name__ == "__main__":
-#     st_ui()
+#     st_ui(text)
