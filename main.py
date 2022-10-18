@@ -72,5 +72,5 @@ def st_ui(text):
     
  
 
-if __name__ == "__main__":
-    st_ui(text)
+# if __name__ == "__main__":
+#     st_ui()
