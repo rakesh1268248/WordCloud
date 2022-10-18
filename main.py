@@ -1,45 +1,45 @@
-import re
-import string
-import nltk
+# import re
+# import string
+# import nltk
 import streamlit as st
-nltk.download('all')
-from nltk import sent_tokenize,word_tokenize
-from nltk.corpus import stopwords  #stopwords
-from nltk.stem import WordNetLemmatizer
-lemmatizer = WordNetLemmatizer()
+# nltk.download('all')
+# from nltk import sent_tokenize,word_tokenize
+# from nltk.corpus import stopwords  #stopwords
+# from nltk.stem import WordNetLemmatizer
+# lemmatizer = WordNetLemmatizer()
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
 
 
-def preprocessing(sentences):
-  documents_clean = ''
-  for d in sentences:
-    # Remove Unicode
-    document_test = re.sub('[^a-zA-Z0-9]', ' ', d)
-    # Lowercase the document
-    document_test = document_test.lower()
-    # Remove punctuations
-    document_test = re.sub(r'[%s]' % re.escape(string.punctuation), ' ', document_test)
-    #Remove the numbers
-    document_test = re.sub(r'[0-9]', '', document_test)
-    # Remove the doubled space
-    document_test = re.sub(r'\s{2,}', ' ', document_test)
-    #tokenization
-    document_test = document_test.split()   
-    #stopwords_removal
-    document_test = [word for word in document_test if not word in set(stopwords.words('english'))]
-    #stemming
-    #document_test = [stemmer.stem(word) for word in document_test]
-    #lemmmitization
-    document_test = [lemmatizer.lemmatize(word) for word in document_test]
-    document_test = ' '.join(document_test)
-    documents_clean+=(document_test)
-  return documents_clean
+# def preprocessing(sentences):
+#   documents_clean = ''
+#   for d in sentences:
+#     # Remove Unicode
+#     document_test = re.sub('[^a-zA-Z0-9]', ' ', d)
+#     # Lowercase the document
+#     document_test = document_test.lower()
+#     # Remove punctuations
+#     document_test = re.sub(r'[%s]' % re.escape(string.punctuation), ' ', document_test)
+#     #Remove the numbers
+#     document_test = re.sub(r'[0-9]', '', document_test)
+#     # Remove the doubled space
+#     document_test = re.sub(r'\s{2,}', ' ', document_test)
+#     #tokenization
+#     document_test = document_test.split()   
+#     #stopwords_removal
+#     document_test = [word for word in document_test if not word in set(stopwords.words('english'))]
+#     #stemming
+#     #document_test = [stemmer.stem(word) for word in document_test]
+#     #lemmmitization
+#     document_test = [lemmatizer.lemmatize(word) for word in document_test]
+#     document_test = ' '.join(document_test)
+#     documents_clean+=(document_test)
+#   return documents_clean
   # print(documents_clean)
 def st_ui(text):
-  st.set_page_config(layout = "wide")
-  st.title("WordCloud of supplier contract")
+#   st.set_page_config(layout = "wide")
+#   st.title("WordCloud of supplier contract")
 #   Button=st.sidebar.button('Generate wordcloud')
 #   if Button:
 #   text="""Word Clouds came out to be a game-changer visualization technique for understanding and determining patterns and evolving trends. 
@@ -58,9 +58,9 @@ def st_ui(text):
 #           photo-sharing website, in 2006 started using Tag Clouds for site exploration. By the end of the first decade of the 21st century, Word Cloud become a very 
 #           popular tool among the text miners.But, the trend of Tag Cloud keeps vacillating and eventually started declining over the period of time. And thus, Word 
 #           Clouds are being popularly used in today’s world."""
-  sentences = nltk.sent_tokenize(text)
-  documents_clean=preprocessing(sentences)  
-  wordcloud = WordCloud(width = 800, height =600,background_color ='white',min_font_size = 5,max_words=500).generate(documents_clean)
+#   sentences = nltk.sent_tokenize(text)
+#   documents_clean=preprocessing(sentences)  
+  wordcloud = WordCloud(width = 800, height =600,background_color ='white',min_font_size = 5,max_words=500).generate(text)
   # plot the WordCloud image                      
   plt.figure(figsize = (15,10), facecolor = None)
   plt.imshow(wordcloud,interpolation="bilinear")
