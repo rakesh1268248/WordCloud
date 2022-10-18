@@ -10,9 +10,7 @@ lemmatizer = WordNetLemmatizer()
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-#for adding daisi dependencies
-# import pydaisi as pyd
-# stable_diffusion = pyd.Daisi("laiglejm/Stable Diffusion")
+
 
 def preprocessing(sentences):
   documents_clean = ''
