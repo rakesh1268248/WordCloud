@@ -67,8 +67,8 @@ def st_ui(clean_text):
   plt.imshow(wordcloud,interpolation="bilinear")
   plt.axis("off")
   plt.tight_layout(pad = 0)
-  plt.show()
-  st.pyplot(fig=plt)
+  return plt.show()
+  #st.pyplot(fig=plt)
 
     
  
