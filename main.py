@@ -8,7 +8,7 @@
 # from nltk.stem import WordNetLemmatizer
 # lemmatizer = WordNetLemmatizer()
 from wordcloud import WordCloud
-import matplotlib.pyplot as plt
+
 
 
 
@@ -37,7 +37,7 @@ import matplotlib.pyplot as plt
 #     documents_clean+=(document_test)
 #   return documents_clean
   # print(documents_clean)
-def st_ui(text):
+def st_ui(clean_text):
 #   st.set_page_config(layout = "wide")
 #   st.title("WordCloud of supplier contract")
 #   Button=st.sidebar.button('Generate wordcloud')
@@ -60,14 +60,9 @@ def st_ui(text):
 #           Clouds are being popularly used in today’s world."""
 #   sentences = nltk.sent_tokenize(text)
 #   documents_clean=preprocessing(sentences)  
-  wordcloud = WordCloud(width = 800, height =600,background_color ='white',min_font_size = 5,max_words=500).generate(text)
+  wordcloud = WordCloud(width = 800, height =600,background_color ='white',min_font_size = 5,max_words=500).generate(clean_text)
   # plot the WordCloud image                      
-  plt.figure(figsize = (15,10), facecolor = None)
-  plt.imshow(wordcloud,interpolation="bilinear")
-  plt.axis("off")
-  plt.tight_layout(pad = 0)
-  plt.show()
-  st.pyplot(fig=plt)
+  return wordcloud
 
     
  
