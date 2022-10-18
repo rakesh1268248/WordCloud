@@ -69,6 +69,7 @@ def st_ui():
   plt.axis("off")
   plt.tight_layout(pad = 0)
   plt.show()
+  st.pyplot(fig=plt)
 
     
  
