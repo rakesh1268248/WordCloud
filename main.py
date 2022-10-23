@@ -42,6 +42,9 @@ def st_ui():
   st.set_page_config(layout = "wide")
   st.title("WordCloud of supplier contract")
   Button=st.sidebar.button('Generate wordcloud')
+  select_category = st.sidebar.selectbox("select_category", ["Summarization", "Sentiment Analytics", "Risk Analytics","Price Analytics","People/Stakeholders Analytics","Spatial Analytics",
+                                                             "Text To Search","Grid Analytics","Social Analytics","Conversation-Transcripts Analytics","Non English Text","Filter Non English",
+                                                            "List Of Languages","Display Full English Version","Full Document Translation"])
   if Button:
     text="""Word Clouds came out to be a game-changer visualization technique for understanding and determining patterns and evolving trends. 
             Whether to discover the political agendas of aspiring election candidates of a country or to analyze the customer reviews on the recently 
